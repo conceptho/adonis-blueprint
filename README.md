@@ -14,8 +14,8 @@ Also, it includes a bunch of helpfull structures such as:
 - A `BaseModel` with support to `softDelete`;
 - `Errors`: Exports default http error messages.
 - `Exceptions/ErrorCodeException`: An easy to use error class with support to default messages and payload.
-- `Middleware/CreateTransaction`: Inserts a database transaction into the `context` object, with can be later capture by the `FinalizeTransaction` middleware.
-- `Middleware/FinalizeTransaction`: Commits the current transaction in the P`context` object ou rollback it if any error occurs.
+- `Middleware/CreateTransaction`: Inserts a database transaction into the `context` object, which can be later captured by the `FinalizeTransaction` middleware.
+- `Middleware/FinalizeTransaction`: Commits the current transaction in the `context` object or rollback it if any error occurs.
 - `Middleware/HeaderPagination`: Captures the `response` object within the current `context` and sets the header with pagination info.
 
 ## Setup
