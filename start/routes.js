@@ -13,10 +13,11 @@
 
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route');
-const ErrorCode = use('Exceptions/ErrorCodeException');
+const User = use('App/Models/User');
 
-Route.get('/', () => {
-  const errors = [{ 1: 'A error' }];
+// const { ErrorCodeException } = use('Conceptho/Exceptions');
+const TestService = use('App/Services/TestService');
 
-  throw new ErrorCode(503, errors);
-});
+Route.get('/', async () => User.all());
+
+Route.get('/service', () => TestService.query().fetch());
