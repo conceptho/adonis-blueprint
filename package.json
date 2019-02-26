@@ -27,7 +27,7 @@
     "@adonisjs/ignitor": "^2.0.8",
     "@adonisjs/lucid": "^6.1.3",
     "@adonisjs/validator": "^5.0.6",
-    "@conceptho/adonis-service-layer": "latest"
+    "@conceptho/adonis-service-layer": "^0.2.3"
   },
   "devDependencies": {
     "eslint": "^5.14.1",
