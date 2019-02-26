@@ -5,8 +5,11 @@
   "description": "The fullstack application boilerplate for Adonisjs",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js",
-    "test": "node ace test"
+    "start": "adonis serve",
+    "dev": "adonis serve --dev --polling",
+    "test": "node ace test --timeout 10000",
+    "lint": "standardx ./**/*.js",
+    "lint:fix": "standardx ./**/*.js --fix"
   },
   "keywords": [
     "adonisjs",
@@ -30,7 +33,28 @@
     "mysql": "^2.16.0"
   },
   "devDependencies": {
-    "eslint": "^5.14.1"
+    "husky": "^1.1.4",
+    "standardx": "^3.0.1",
+    "lint-staged": "^8.0.4"
+  },
+  "standard": {
+    "ignore": [
+      "./public/",
+      "./node_modules/"
+    ],
+    "globals": [
+      "use"
+    ]
+  },
+  "eslintConfig": {
+    "rules": {
+      "camelcase": 0
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "autoload": {
     "App": "./app"
