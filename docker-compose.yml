@@ -20,4 +20,4 @@ services:
       - 3334:3306
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE:
+      MYSQL_DATABASE: adonis
