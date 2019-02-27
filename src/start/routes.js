@@ -17,10 +17,6 @@
 const Route = use('Route')
 const User = use('App/Models/User')
 
-Route.group('front', () => {
-  Route.on('/').render('welcome')
-})
-
 Route.group('api', () => {
   Route.get('/', () => ({ Hello: 'AdonisJs' }))
   Route.get('/users', async () => User.all())
