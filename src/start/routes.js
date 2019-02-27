@@ -15,9 +15,13 @@
 
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
+const User = use('App/Models/User')
 
-// Route.on('/').render('welcome')
+Route.group('front', () => {
+  Route.on('/').render('welcome')
+})
 
-Route.get('/', 'TaskController.index')
-Route.post('tasks', 'TaskController.store')
-Route.delete('tasks/:id', 'TaskController.destroy')
+Route.group('api', () => {
+  Route.get('/', () => ({ Hello: 'AdonisJs' }))
+  Route.get('/users', async () => User.all())
+}).prefix('v1')
