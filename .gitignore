@@ -1,13 +1,11 @@
-# Node modules
 node_modules/
-
-# Adonis directory for storing tmp files
 tmp/
-
-# The development sqlite file
-*.sqlite
-*.env
-
 .circleci/
 .vscode/
 .idea/
+
+*.sqlite
+*.env
+
+package-lock.json
+yarn.lock
