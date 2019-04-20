@@ -9,7 +9,8 @@
     "dev": "adonis serve --dev --polling",
     "test": "node ace test --timeout 10000",
     "lint": "standardx ./**/*.js",
-    "lint:fix": "standardx ./**/*.js --fix"
+    "lint:fix": "standardx ./**/*.js --fix",
+    "build": "tsc"
   },
   "keywords": [
     "adonisjs",
@@ -30,15 +31,22 @@
     "@adonisjs/session": "^1.0.27",
     "@adonisjs/shield": "^1.0.8",
     "@adonisjs/validator": "^5.0.6",
-    "@conceptho/adonis-service-layer": "^0.*.*",
+    "@conceptho/adonis-service-layer": "conceptho/adonis-service-layer#feature/proxy-usage",
     "@conceptho/adonis-validators": "^0.*.*",
     "mysql": "^2.16.0"
   },
   "devDependencies": {
+    "@types/bluebird": "^3.5.26",
+    "@types/ioredis": "^4.0.10",
+    "@types/knex": "^0.16.1",
+    "@types/lodash": "^4.14.123",
+    "@types/node": "^11.13.6",
     "eslint": "^5.14.1",
     "husky": "^1.1.4",
     "lint-staged": "^8.0.4",
-    "standardx": "^3.0.1"
+    "standardx": "^3.0.1",
+    "tslint": "^5.16.0",
+    "typescript": "^3.4.4"
   },
   "standard": {
     "ignore": [

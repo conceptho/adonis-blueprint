@@ -57,6 +57,10 @@ const aliases = {}
 | Here you store ace commands for your package
 |
 */
-const commands = []
+const commands = [
+  '@conceptho/adonis-service-layer/src/Commands/Make/Controller',
+  '@conceptho/adonis-service-layer/src/Commands/Make/Model',
+  '@conceptho/adonis-service-layer/src/Commands/Make/Service'
+]
 
 module.exports = { providers, aceProviders, aliases, commands }
