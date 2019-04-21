@@ -1,7 +1,7 @@
 FROM jwilder/dockerize AS dockerize
 
 FROM node:10.13.0-alpine
-
+RUN apk add git
 COPY --from=dockerize /usr/local/bin/dockerize /usr/local/bin
 
 ADD src /src
