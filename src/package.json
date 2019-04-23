@@ -7,9 +7,10 @@
   "scripts": {
     "start": "adonis serve",
     "dev": "adonis serve --dev --polling",
+    "dev:debug": "nodemon --inspect-brk=0.0.0.0 server.js",
     "test": "node ace test --timeout 10000",
-    "lint": "standardx ./**/*.js",
-    "lint:fix": "standardx ./**/*.js --fix"
+    "lint": "eslint ./",
+    "lint:fix": "eslint ./ --fix"
   },
   "keywords": [
     "adonisjs",
@@ -28,34 +29,19 @@
     "@adonisjs/ignitor": "^2.0.8",
     "@adonisjs/lucid": "^6.1.3",
     "@adonisjs/validator": "^5.0.6",
-    "@conceptho/adonis-service-layer": "^0.*.*",
+    "@conceptho/adonis-service-layer": "^1.*.*",
     "@conceptho/adonis-validators": "^0.*.*",
     "mysql": "^2.16.0"
   },
   "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-standard": "^4.0.0",
     "husky": "^1.1.4",
-    "standardx": "^3.0.1",
     "lint-staged": "^8.0.4"
-  },
-  "standard": {
-    "ignore": [
-      "./public/",
-      "./node_modules/"
-    ],
-    "globals": [
-      "use"
-    ]
-  },
-  "eslintConfig": {
-    "parserOptions": {
-      "ecmaVersion": 2017
-    },
-    "rules": {
-      "camelcase": 0
-    },
-    "globals": {
-      "use": true
-    }
   },
   "husky": {
     "hooks": {
@@ -64,7 +50,8 @@
   },
   "lint-staged": {
     "*.js": [
-      "standardx ./**/*.js --fix"
+      "eslint --fix",
+      "git add"
     ]
   },
   "autoload": {
