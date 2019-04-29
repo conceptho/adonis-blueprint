@@ -39,9 +39,7 @@ const globalMiddleware = [
 */
 const namedMiddleware = {
   auth: 'Adonis/Middleware/Auth',
-  guest: 'Adonis/Middleware/AllowGuestOnly',
-  useTransaction: 'Conceptho/Middlewares/UseTransaction',
-  headerPagination: 'Conceptho/Middlewares/HeaderPagination'
+  guest: 'Adonis/Middleware/AllowGuestOnly'
 }
 
 /*
